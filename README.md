@@ -17,9 +17,12 @@ The most polarizing letter with a outlier high variation is O (capital o).
 
 This may be because of the familiarity with the letters. The font used was Arial, an extremely common font, so uncommon forms of letters were not present. Some fonts use less common, alternate glyphs for letters like a or g that could have influenced the ratings.
 
+
 ## Restrictions on results
 
 We can not know if this is influenced by font. This survery was conduction on google forms deafult font Arial.
+
+This was further seen in some very low total vote letters, which showed as error glyphs in many of fonts (but not in the survery). eg unicode U+1DF26 Latin small letter L with mid-height left hook.
 
 
 # Analysis
