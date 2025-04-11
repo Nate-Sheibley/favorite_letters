@@ -9,7 +9,7 @@ Analysis and visualization of letters as rated by tumblr users
 
 English letters scored high in rating, and low in variation. As a whole, they are statistically different than less common latin letters (this is an english survey on an english social media platform). As is intuitive, there is one outlier in english letters in average as well as standard deviation.
 
-![image](images/avg_stdev_scatter_alphabetic_xyswap.png)
+![distribution overview](images/avg_stdev_scatter_alphabetic_xyswap.png)
 
 The outlier with a low average is l (lowercase L). 
 
@@ -18,18 +18,31 @@ The most polarizing letter with a outlier high variation is O (capital o).
 This may be because of the familiarity with the letters. The font used was Arial, an extremely common font, so uncommon forms of letters were not present. Some fonts use less common, alternate glyphs for letters like a or g that could have influenced the ratings.
 
 
-## Restrictions on results
+## Restrictions on analysis
 
-We can not know if this is influenced by font. This survery was conduction on google forms deafult font Arial.
+We can not know if this is influenced by font. This survery was conduction on google forms deafult font, Arial.
 
-This was further seen in some very low total vote letters, which showed as error glyphs in many of fonts (but not in the survery). eg unicode U+1DF26 Latin small letter L with mid-height left hook.
+This was further seen in some very low total vote letters, which showed as error glyphs in many fonts (but not in the survery). eg unicode U+1DF26 Latin small letter L with mid-height left hook.
+
+Assumption: Many of these characters would be unfamiliar to readers, and therefore this survery is mostly an indicator of initial attraction of a shape, excepting the egnlish alphabet.
 
 
 # Analysis
 ### Purpose
+To analyze the favorability and distributions of latin letters in a favorabiilty poll.
 
-## Findings Summary
+## EDA overview
+Higher average ratings gathered more votes total, indicating people had stronger opinions about more favorable letters in general
+![ratings skew with higher avg rating](images/rating_count_vs_avg_ratings_box.png)
+![more characteristic on tier hist](images/rating_dist_histogram.png) ![votes per letter](images/votes_per_letter_hist.png)
+![dist of indv ratings](images/ratings_distributions_box.png)
+![modelling avg vs var](images/avg_stdev_scatter.png)
 
+
+![savgol high center different](images/savgol_high.png)
+
+## English letters vs other letters
+![savgol + eng overlay](images/avg_stdev_scatter_alphabetic.png)
 ## Introduce sections and methodology
 1. EDA over whole whole dataset 
 2. Standard character comparison to whole
