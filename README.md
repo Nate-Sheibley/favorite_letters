@@ -43,6 +43,8 @@ Higher average ratings gathered more votes total, indicating people had stronger
 
 ## English letters vs other letters
 ![savgol + eng overlay](images/avg_stdev_scatter_alphabetic.png)
+![eng-like vs not eng-like](images/avg_stdev_kde_eng-like)
+
 ## Introduce sections and methodology
 1. EDA over whole whole dataset 
 2. Standard character comparison to whole
