@@ -32,18 +32,53 @@ Assumption: Many of these characters would be unfamiliar to readers, and therefo
 To analyze the favorability and distributions of latin letters in a favorabiilty poll.
 
 ## EDA overview
-Higher average ratings gathered more votes total, indicating people had stronger opinions about more favorable letters in general
+
+Higher average ratings gathered more votes total, indicating people had stronger opinions and were more likely to rate more attractive characters.
+
 ![ratings skew with higher avg rating](images/rating_count_vs_avg_ratings_box.png)
-![more characteristic on tier hist](images/rating_dist_histogram.png) ![votes per letter](images/votes_per_letter_hist.png)
+
+Returning to the histogram of average ratings, we can see little difference in the mean and median indicating low skew in the average ratings. However, we see high kurtosis, indicating there is a sharp drop between score with high counts and scores with low counts.
+
+![more characteristic on tier hist](images/rating_dist_histogram.png) 
+
+In comparison, there is almost no skew in the number of votes per letter, indicating a close to normal distribution in total vote counts. Interestingly, the kurtosis value is 1 (< 3, platykurtic), indicating it is a flatter distribution than normal. This goes against my initial intuition viewing this plot, but I can see the justification for this feature.
+
+![votes per letter](images/votes_per_letter_hist.png)
+
+Digging deeper into various distributions of obvious subgroups, this plot shows us there are many outliers in vote counts for extreme low (0) , high (6), and ambivalent (3) scores. I know this is a feature of human survery behavior, the highest, lowest, and most middle options are the most voted, as it is more complex to vote intermediate favorabilities. However, this plot gives us good information, the middle counts had, on average, more votes than the upper and lower extremes. This provides some confidence that most values were voted on.
+
 ![dist of indv ratings](images/ratings_distributions_box.png)
+
+## Statistics and modelling
+
+Here we provide a plot of rating variation (stdev) versus average rating. We will return to this plot frequently later. In red we have a model of the data provided by: a * np.exp(-((x - b)**2)/(2 * c**2))
+
 ![modelling avg vs var](images/avg_stdev_scatter.png)
 
 
 ![savgol high center different](images/savgol_high.png)
 
 ## English letters vs other letters
+
+Continuing with this same average rating vs variation plot with a double savgol filter to estimate a midline to the density, we can see that regular english letters score high in rating, with low variabilities, some some exceptions.
+
+The outlier with a low average is l (lowercase L). 
+
+The most polarizing letter with a outlier high variation is O (capital o).
+
 ![savgol + eng overlay](images/avg_stdev_scatter_alphabetic.png)
-![eng-like vs not eng-like](images/avg_stdev_kde_eng-like)
+
+If we look at strictly english lowercase and capital letters we see the same story as shown above. The english letters are a small high average rating enclave within the much broader set of all letters. For this plot the two KDE plots were done seperately, meaning the orange english letters do not contribute to the blue KDE plot.
+
+![strict english only](images/avg_stdev_kde_eng.png)
+
+However, this whole storyline gets muddied when plotting english-like letters. Regular english characters are highly rated, but there is a significant subset of latin letters that are english letters with accents. This KDE-scatter plot collects all the english-like letters, from the common english alphabet to those with small deviations, like accents.
+
+This plot tells us that while the 52 english letters score high, english-like letters comprise the vast bulk of our low scoring data. 
+
+The blue, english-unlike letters, like many greek letters, provide the high variation and high scoring bridge between our highly scoring english alphabet and low scoring english-like symbols.
+
+![eng-like vs not eng-like](images/avg_stdev_kde_eng-like.png)
 
 ## Introduce sections and methodology
 1. EDA over whole whole dataset 
