@@ -51,7 +51,9 @@ Digging deeper into various distributions of obvious subgroups, this plot shows 
 
 ## Statistics and modelling
 
-Here we provide a plot of rating variation (stdev) versus average rating. We will return to this plot frequently later. In red we have a model of the data provided by: a * np.exp(-((x - b)**2)/(2 * c**2))
+Here we provide a plot of rating variation (stdev) versus average rating. We will return to this plot frequently later. In red we have a model of the data provided by:  
+
+$\a*exp(-(x - b)^2/c^2)+d$
 
 ![modelling avg vs var](images/avg_stdev_scatter.png)
 
