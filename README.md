@@ -105,6 +105,11 @@ Breaking it down a tiny bit further, we can see the long flat tail for the engli
 
 ![eng-like-not trible countplot](images/dodged_bar_chart_tiers_by_type.png)
 
+Highest Tier letters for their respective categories.
+The english characters in A- are: X, e, W.
+The english-like characters in A- are:  ø,  Ö,  Ø,  ɀ,  ü.
+The english-unlike characters in A are: ʘ, ɤ, ᴥ, Þ, ɸ, ß, Ʃ, ʃ, ꝝ, ʔ.
+
 ## Survey and data links
 
 https://docs.google.com/forms/d/e/1FAIpQLSeP3hnCQVRuIeGSHt6z1kGu3G5AF_SzOy38KQ5DjljhW4XM8w/viewform
