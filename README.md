@@ -24,7 +24,7 @@ In blue, letters, like many greek letters, provide the high variation and high s
 ![eng-like vs not eng-like](images/avg_stdev_kde_eng-like.png)
 
 This can be very clearly seen in breaking down the initial tier histogram.
-![eng-like-unlike dodges histogram](images/dodged_bar_chart_tiers_by_type.png)
+![eng-like-unlike dodges histogram](images/dodged_bimodal_bar_chart_tiers_by_type.png)
 
 ## Restrictions on analysis
 
@@ -90,16 +90,13 @@ The blue, english-unlike letters, like many greek letters, provide the high vari
 
 ![eng-like vs not eng-like](images/avg_stdev_kde_eng-like.png)
 
-## Introduce sections and methodology
-1. EDA over whole whole dataset 
-2. Standard character comparison to whole
-3. Statistics proving a differentiation
-4. examining outlier and extrema cases
-5. additional ML to attempt to extract full value
+Exmanding on this thought, we can clearly see a bimodal distribution of english-like vs english unlikem characters.
 
-## Complete findings with full statistical support
+![eng-like-unlike dodges histogram](images/dodged_bimodal_bar_chart_tiers_by_type.png)
 
-# Background
+Breaking it down a tiny bit further, we can see the long flat tail for the english-like characters comes from the 52 english alphabet characters that rank high and statistically distinct from the english-like characters, and are an example of familiarity bias introduced in a simple survery.
+
+![eng-like-not trible countplot](images/dodged_bar_chart_tiers_by_type.png)
 
 ## Survey link
 
