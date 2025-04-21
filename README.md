@@ -1,5 +1,5 @@
 # Favorite Latin Letters Survey
-Analysis and visualization of letters as rated by tumblr users
+Analysis and visualization of letters as rated by tumblr users. This is an excercise in visualizations and data mining.
 
 # Summary
 
