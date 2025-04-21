@@ -17,6 +17,14 @@ The most polarizing letter with a outlier high variation is O (capital o).
 
 This may be because of the familiarity with the letters. The font used was Arial, an extremely common font, so uncommon forms of letters were not present. Some fonts use less common, alternate glyphs for letters like a or g that could have influenced the ratings.
 
+This can be demonstrated after data mining. While the 52 english letters score high, english-like letters comprise the vast bulk of our low scoring data. 
+
+In blue, letters, like many greek letters, provide the high variation and high scoring bridge between our highly scoring english alphabet and low scoring english-like symbols.
+
+![eng-like vs not eng-like](images/avg_stdev_kde_eng-like.png)
+
+This can be very clearly seen in breaking down the initial tier histogram.
+![eng-like-unlike dodges histogram](images/dodged_bar_chart_tiers_by_type.png)
 
 ## Restrictions on analysis
 
@@ -51,13 +59,14 @@ Digging deeper into various distributions of obvious subgroups, this plot shows 
 
 ## Statistics and modelling
 
-Here we provide a plot of rating variation (stdev) versus average rating. We will return to this plot frequently later. In red we have a model of the data provided by:  $a * e^{\frac{-(x - b)^2}{c^2}} + d$
-
+Here we provide a plot of rating variation (stdev) versus average rating. We will return to this plot frequently later. In red we have a model of the data provided by:  $a * e^{\frac{-(x - b)^2}{2 * c^2}} + d$. The savgol filtered data and the normal distribution model match very well in the lower range of data, but diverges in variability for the in the higher average data points. This continues to suggest that there is a bias towards voting for the high favorability data, with extremely positive votes skewing the variability in high scores.
 
 ![modelling avg vs var](images/avg_stdev_scatter.png)
 
+A quick T-test was done to confirm that the high variability center is different than the low variability edges of the dataset. The side regions were tested against the center region, and shown to be statistically distinguishable, as expected viewing the uncolored plot. This region comprises of the middle third of datapoints by count, after ordered according to the savgol filter.
 
 ![savgol high center different](images/savgol_high.png)
+
 
 ## English letters vs other letters
 
