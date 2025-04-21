@@ -3,7 +3,7 @@ Analysis and visualization of letters as rated by tumblr users
 
 # Summary
 
-1179 letters were included in a survery and rated from 0 to 6. These were broken down into letter tiers similar to those in schools, (F,D,C,B,A,S). The heighest and lowest teirs were not populated, as the average scores naturally fell between 1 and 5.
+1179 letters were included in a survery and rated from 0 to 6. These were broken down into letter tiers similar to those in schools, (F,D,C,B,A,S). The heighest and lowest teirs were not populated, as the average scores naturally fell between 1 and 5. Though this distribution appears largely mono-modal, we can demonstrate there are at least 3 intuitive groupings we can aplit this dataset into and show it is the combination of 3 close to normal distributions.
 
 ![histogram of avgs](images/tier_dist_freq_plot.png)
 
@@ -23,8 +23,13 @@ In blue, letters, like many greek letters, provide the high variation and high s
 
 ![eng-like vs not eng-like](images/avg_stdev_kde_eng-like.png)
 
-This can be very clearly seen in breaking down the initial tier histogram.
+This can be very clearly seen in breaking down the initial tier histogram, that the english-like characters is a bimodal distribution.
+
 ![eng-like-unlike dodges histogram](images/dodged_bimodal_bar_chart_tiers_by_type.png)
+
+Splitting these distributions further into the 52 english letters, english-like letters, and english-unlike letters we can clearly see there are at least 3 distributions present. There is poential that the english-like letters could be broken down further, such as into capital and lowercase letters, and more distributions would be apparent, but that starts to split the dataset quite finely and noise may start to become a factor.
+
+![3 unqiue groupings](images/dodged_bar_chart_tiers_by_type.png)
 
 ## Restrictions on analysis
 
@@ -78,7 +83,9 @@ The most polarizing letter with a outlier high variation is O (capital o).
 
 ![savgol + eng overlay](images/avg_stdev_scatter_alphabetic.png)
 
-If we look at strictly english lowercase and capital letters we see the same story as shown above. The english letters are a small high average rating enclave within the much broader set of all letters. For this plot the two KDE plots were done seperately, meaning the orange english letters do not contribute to the blue KDE plot.
+## Conclusions
+
+If we look at the strict 52 english letters we see the same story as shown above. The english letters are a small high average rating enclave within the much broader set of all letters. For this plot the two KDE plots were done seperately, meaning the orange english letters do not contribute to the blue KDE plot.
 
 ![strict english only](images/avg_stdev_kde_eng.png)
 
@@ -98,7 +105,7 @@ Breaking it down a tiny bit further, we can see the long flat tail for the engli
 
 ![eng-like-not trible countplot](images/dodged_bar_chart_tiers_by_type.png)
 
-## Survey link
+## Survey and data links
 
 https://docs.google.com/forms/d/e/1FAIpQLSeP3hnCQVRuIeGSHt6z1kGu3G5AF_SzOy38KQ5DjljhW4XM8w/viewform
 
